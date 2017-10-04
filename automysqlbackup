@@ -278,7 +278,7 @@ M=`date +%B`							# Month e.g January
 W=`date +%V`							# Week Number e.g 37
 VER=2.5									# Version Number
 LOGFILE=/dev/stdout		# Logfile Name
-LOGERR=/dev/sdrerr		# Logfile Name
+LOGERR=/dev/stdout		# Logfile Name
 BACKUPFILES=""
 OPT="--quote-names --events"			# OPT string for use with mysqldump ( see man mysqldump )
 
@@ -339,7 +339,7 @@ exec 6>&1           # Link file descriptor #6 with stdout.
                     # Saves stdout.
 exec > $LOGFILE     # stdout replaced with file $LOGFILE.
 #touch $LOGERR      # disable touch for logfiles as this leads to problems with openshift
-exec 7>&2           # Link file descriptor #7 with stderr.
+exec 7>&2           # Link file descriptor #7 with .
                     # Saves stderr.
 exec 2> $LOGERR     # stderr replaced with file $LOGERR.
 
