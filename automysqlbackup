@@ -334,11 +334,11 @@ rm -f "$BACKUPDIR"/latest/*
 fi
 
 # IO redirection for logging.
-touch $LOGFILE
+#touch $LOGFILE     # disable touch for logfiles as this leads to problems with openshift
 exec 6>&1           # Link file descriptor #6 with stdout.
                     # Saves stdout.
 exec > $LOGFILE     # stdout replaced with file $LOGFILE.
-touch $LOGERR
+#touch $LOGERR      # disable touch for logfiles as this leads to problems with openshift
 exec 7>&2           # Link file descriptor #7 with stderr.
                     # Saves stderr.
 exec 2> $LOGERR     # stderr replaced with file $LOGERR.
