@@ -7,6 +7,8 @@ RUN apk add --no-cache mysql-client bash
 RUN echo "$CRON_SCHEDULE    /usr/local/bin/automysqlbackup" > /etc/crontabs/root
 
 COPY automysqlbackup /usr/local/bin
+COPY automysqlbackup.conf /etc/automysqlbackup/
+
 COPY start.sh /usr/local/bin
 
 RUN chmod +x /usr/local/bin/automysqlbackup /usr/local/bin/start.sh
