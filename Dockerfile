@@ -9,7 +9,7 @@ RUN echo "$CRON_SCHEDULE    /usr/local/bin/automysqlbackup" > /etc/crontabs/root
 COPY automysqlbackup /usr/local/bin
 COPY start.sh /usr/local/bin
 
-RUN chmod +x /usr/local/bin/automysqlbackup start.sh
+RUN chmod +x /usr/local/bin/automysqlbackup /usr/local/bin/start.sh
 
 RUN mkdir -p /etc/default
 
