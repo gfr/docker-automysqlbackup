@@ -101,11 +101,10 @@ do
     for DBDUMP in `ls "${DB_CURRENT_DIR}"`
     do
         DBDUMP="${DB_CURRENT_DIR}/${DBDUMP}"
-        DUMP_DATE=`stat -c %y "${DBDUMP}"`
-        DUMP_TIMESTAMP=`date -d "${DUMP_DATE}" +%s`
+        DUMP_TIMESTAMP=`stat -c %Y "${DBDUMP}"`
         CURRENT_TIMESTAMP=`date +%s`
         TIMESTAMPS_DIFF=`expr ${CURRENT_TIMESTAMP} - ${DUMP_TIMESTAMP}`
-        if [ $TIMESTAMPS_DIFF -gt 1 ] && [ $TIMESTAMPS_DIFF -lt 4000 ];then
+        if [[ $TIMESTAMPS_DIFF -gt 1 ]] && [[ $TIMESTAMPS_DIFF -lt 4000 ]];then
             cp ${DBDUMP} ${DB_HOURLY_DIR}
         fi
     done
