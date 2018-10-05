@@ -36,4 +36,4 @@ ENV USERNAME=           \
     ROUTINES=yes        \
     CRON_SCHEDULE=
 
-CMD ["/usr/sbin/crond -f -l 2"]
+CMD ["start.sh"]
