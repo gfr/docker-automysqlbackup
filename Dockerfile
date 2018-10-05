@@ -2,7 +2,7 @@
 FROM alpine:3.6
 MAINTAINER Dmitry Seleznyov <selim013@gmail.com>
 
-RUN apk add --no-cache mysql-client bash
+RUN apk add --no-cache mysql-client bash pigz
 
 RUN echo "$CRON_SCHEDULE    /usr/local/bin/automysqlbackup" > /etc/crontabs/root
 
@@ -28,14 +28,10 @@ ENV USERNAME=           \
     CREATE_DATABASE=yes \
     SEPDIR=yes          \
     DOWEEKLY=6          \
-    COMP=gzip           \
-    COMMCOMP=no         \
-    LATEST=no           \
-    MAX_ALLOWED_PACKET= \
-    SOCKET=             \
-    PREBACKUP=          \
-    POSTBACKUP=         \
-    ROUTINES=yes        \
-    CRON_SCHEDULE=
+    DRYRUN=0            \
+    ROTATION_DAILY=6    \
+    ROTATION_WEEKLY=35  \
+    ROTATION_MONTHLY=150
+    
 
 CMD ["start.sh"]
