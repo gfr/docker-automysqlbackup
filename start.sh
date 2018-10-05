@@ -2,7 +2,7 @@
 
 set -e
 
-echo "$CRON_SCHEDULE    /usr/local/bin/automysqlbackup" > /etc/crontabs/automysqlbackup
+#echo "$CRON_SCHEDULE    /usr/local/bin/automysqlbackup" > /etc/crontabs/automysqlbackup
 
 exec crond -f -l 2
 
