@@ -2,7 +2,7 @@
 FROM alpine:3.6
 MAINTAINER Dmitry Seleznyov <selim013@gmail.com>
 
-RUN apk add --no-cache mysql-client
+RUN apk add --no-cache mysql-client bash
 
 RUN echo "$CRON_SCHEDULE    /usr/local/bin/automysqlbackup" > /etc/crontabs/root
 
