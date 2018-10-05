@@ -4,8 +4,6 @@ MAINTAINER Dmitry Seleznyov <selim013@gmail.com>
 
 RUN apk add --no-cache mysql-client
 
-RUN echo "$CRON_SCHEDULE    /usr/local/bin/automysqlbackup" > /etc/crontabs/root
-
 COPY automysqlbackup /usr/local/bin
 COPY start.sh /usr/local/bin
 
