@@ -35,4 +35,4 @@ ENV USERNAME=           \
     ROUTINES=yes        \
     CRON_SCHEDULE=
 
-CMD ["crond -l 2 -f"]
+CMD ["/usr/bin/crond -l 2 -f"]
