@@ -4,8 +4,6 @@ set -e
 
 #echo "$CRON_SCHEDULE    /usr/local/bin/automysqlbackup" > /etc/crontabs/automysqlbackup
 
-exec cat /etc/crontabs/root
-
 exec crond -f -l 2
 
 #if [ "${CRON_SCHEDULE}" ]; then
