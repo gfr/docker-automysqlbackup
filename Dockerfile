@@ -4,7 +4,7 @@ MAINTAINER Dmitry Seleznyov <selim013@gmail.com>
 
 RUN apk add --no-cache mysql-client bash pigz
 
-RUN echo "$CRON_SCHEDULE    /usr/local/bin/cron.sh" > /etc/crontabs/root
+#RUN echo "$CRON_SCHEDULE    /usr/local/bin/cron.sh" > /etc/crontabs/root
 
 RUN cat /etc/crontabs/root
 
