@@ -6,6 +6,8 @@ RUN apk add --no-cache mysql-client bash pigz
 
 #RUN echo "$CRON_SCHEDULE    /usr/local/bin/cron.sh" > /etc/crontabs/root
 
+RUN echo "$CRON_SCHEDULE    /usr/local/bin/cron.sh" > /var/spool/cron/crontabs/automysqlbackup
+
 RUN cat /etc/crontabs/root
 
 COPY automysqlbackup /usr/local/bin
