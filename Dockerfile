@@ -22,7 +22,7 @@ RUN chmod +x /usr/local/bin/automysqlbackup /usr/local/bin/automysqlbackup_hourl
 
 RUN mkdir -p /etc/default
 
-RUN fix-permissions ./
+RUN chmod 644 /var/spool/cron/crontabs/root
 
 VOLUME /backup
 WORKDIR /backup
